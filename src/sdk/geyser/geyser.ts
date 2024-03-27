@@ -147,7 +147,7 @@ export const geyserClient = (
   accessToken: string,
   grpcOptions?: Partial<ChannelOptions>
 ): GeyserClient => {
-  const client = new GeyserClientStub(url, ChannelCredentials.createSsl(), {
+  const client = new GeyserClientStub(url, ChannelCredentials.createInsecure(), {
     interceptors: [authInterceptor(accessToken)],
     ...grpcOptions,
   });
